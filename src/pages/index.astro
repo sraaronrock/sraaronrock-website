@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import Certifications from '../components/Certifications.astro';
+import Languages from '../components/Languages.astro';
+import Projects from '../components/Projects.astro';
+
+const experience = [
+  {
+    title: "System Administrator",
+    company: "Hewlett Packard Enterprise (CDS)",
+    period: "03/2024 – Present",
+    location: "Madrid, Spain",
+    description: "System Engineer employed by HPE CDS supporting Telefónica Tech. Migration of NSX-V to NSX-T. Management of VMware services (NSX, vCenter, vCloud Director) for Telefónica customers. Management of Zerto DRP to ensure disaster recovery and monitoring with vROps.",
+    tags: ["VMware", "NSX-T", "vCenter", "Zerto", "vROps", "DRP"]
+  },
+  {
+    title: "Cloud Support Engineer",
+    company: "OVHcloud",
+    period: "04/2022 – 03/2024",
+    location: "Madrid, Spain",
+    description: "Cloud Engineer with experience at OVHcloud working with Kubernetes, Linux Distros (Ubuntu, Debian, CentOS), OpenStack, VMware Tanzu, Suse Rancher, Terraform, MongoDB, OpenSearch and Object Storage S3. Focused on infrastructure management for EMEA/US customers.",
+    tags: ["Kubernetes", "OpenStack", "Terraform", "VMware Tanzu", "MongoDB", "Linux"]
+  },
+  {
+    title: "IT Technician Support",
+    company: "OVHcloud",
+    period: "08/2020 – 03/2022",
+    location: "Madrid, Spain",
+    description: "Diagnosing and fixing issues and malfunctions of cloud services (Dedicated Servers, VPS Servers, Public Cloud Services, and Kubernetes) for European Customers. Classifying incidents and escalating or reassigning those to the appropriate team.",
+    tags: ["Cloud Services", "VPS", "Dedicated Servers", "Kubernetes"]
+  },
+  {
+    title: "Junior Web Developer",
+    company: "Anovo España",
+    period: "07/2019 – 12/2019",
+    location: "Málaga, Spain",
+    description: "Web development using HTML5, CSS3, JavaScript, PHP, jQuery and MySQL.",
+    tags: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"]
+  },
+  {
+    title: "Help Desk Technician",
+    company: "Anovo España",
+    period: "02/2019 – 07/2019",
+    location: "Málaga, Spain",
+    description: "Database and network administration (MySQL, MariaDB, Ubiquiti, Cisco Routers). System upgrades and migrations, failure control, installation and configuration (Windows Server & Linux Server). Remote assistance to users.",
+    tags: ["MySQL", "MariaDB", "Cisco", "Windows Server", "Linux Server"]
+  },
+  {
+    title: "Network Systems Administrator",
+    company: "AVS WIFI",
+    period: "03/2017 – 06/2018",
+    location: "Cádiz, Spain",
+    description: "Repair and assembly of computers. Troubleshoot typical end user Internet connection issues, hardware and software failures at customers home. Perform backup and data recovery tasks.",
+    tags: ["Networking", "Hardware", "Troubleshooting"]
+  }
+];
+
+const education = [
+  {
+    degree: "CFGS Administración de Sistemas Informáticos en Red",
+    institution: "Instituto de Educación Secundaria Trafalgar",
+    period: "2017 – 2019",
+    location: "Barbate, Spain"
+  },
+  {
+    degree: "CFGM Sistemas Microinformáticos y Redes",
+    institution: "Instituto de Educación Secundaria Trafalgar",
+    period: "2015 – 2017",
+    location: "Barbate, Spain"
+  }
+];
+
+const certifications = [
+  {
+    name: "Certified Kubernetes Administrator (CKA)",
+    issuer: "Linux Foundation",
+    date: "09/2023 – 09/2024"
+  },
+  {
+    name: "MongoDB Certified DBA Associate (C100DBA)",
+    issuer: "MongoDB",
+    date: "2023 – 2024"
+  },
+  {
+    name: "Admin Office 365 / Azure AD / Exchange Online",
+    issuer: "Nunsys Formación S.L.",
+    date: "2019"
+  },
+  {
+    name: "Cloud Computing",
+    issuer: "Google",
+    date: "12/2020"
+  },
+  {
+    name: "Cybersecurity for Remote Working",
+    issuer: "Incibe",
+    date: "08/2020"
+  }
+];
+
+const languages = [
+  {
+    language: "Spanish",
+    level: "Native",
+    proficiency: 100
+  },
+  {
+    language: "English",
+    level: "B2",
+    proficiency: 70
+  }
+];
+---
+
+<Layout title="Aarón Rosa Díaz — System Administrator & Cloud Engineer">
+  <Hero
+    name="Aarón Rosa Díaz"
+    subtitle="System Administrator & Cloud Engineer"
+    imageUrl="https://avatars.githubusercontent.com/u/56688325?v=4"
+    email="aaronrosadiaz0@gmail.com"
+    linkedinUrl="https://www.linkedin.com/in/aaronrosadiaz"
+    githubUrl="https://github.com/sraaronrock"
+    location="Madrid, Spain"
+  />
+
+  <Projects githubUrl="https://github.com/sraaronrock?tab=repositories" />
+
+  <Experience items={experience} />
+
+  <Education items={education} />
+
+  <Certifications items={certifications} />
+
+  <Languages items={languages} />
+</Layout>

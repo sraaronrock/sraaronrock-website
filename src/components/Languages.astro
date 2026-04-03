@@ -1,0 +1,41 @@
+---
+export interface LanguageItem {
+  language: string;
+  level: string;
+  proficiency: number;
+}
+
+export interface Props {
+  items: LanguageItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section id="languages" class="py-10">
+  <div class="flex items-center justify-between mb-8">
+    <h2 class="section-title text-white">
+      Languages
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 animate-stagger">
+    {items.map((item) => (
+      <div class="card group">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-mono font-bold text-base text-white group-hover:text-white/80 transition-colors duration-300">
+            {item.language}
+          </h3>
+          <span class="tag">{item.level}</span>
+        </div>
+        <div class="w-full bg-white/10 rounded-full h-2 overflow-hidden">
+          <div
+            class="h-full rounded-full bg-gradient-to-r from-white/40 to-white/80 transition-all duration-1000 ease-out"
+            style={`width: ${item.proficiency}%`}
+          >
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

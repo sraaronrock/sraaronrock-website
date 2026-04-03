@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Projects — Aarón Rosa Díaz">
+  <section class="py-12">
+    <h1 class="section-title text-white mb-2">
+      Projects
+    </h1>
+    <p class="text-text-secondary font-mono text-sm mb-10">
+      A collection of my open-source work and contributions.
+    </p>
+
+    <a
+      href="https://github.com/sraaronrock?tab=repositories"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="card block group mb-6"
+    >
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h3 class="font-mono font-bold text-lg text-white group-hover:text-white/80 transition-colors duration-300 underline decoration-white/30 underline-offset-4">
+            GitHub Repositories
+          </h3>
+          <p class="text-sm text-text-secondary mt-2 leading-relaxed">
+            Explore my open-source projects, contributions, and code experiments. From infrastructure automation to cloud-native tools and web development projects.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="tag">open-source</span>
+            <span class="tag">cloud</span>
+            <span class="tag">infrastructure</span>
+            <span class="tag">automation</span>
+            <span class="tag">devops</span>
+          </div>
+        </div>
+        <div class="shrink-0 text-text-secondary group-hover:text-white transition-colors duration-300 mt-1">
+          <span class="flex items-center gap-1 font-mono text-sm">
+            GitHub
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <div class="mt-12 text-center">
+      <p class="text-text-secondary text-sm font-mono">
+        More projects coming soon...
+      </p>
+      <div class="mt-4 flex justify-center">
+        <div class="flex gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-white/30 animate-pulse"></span>
+          <span class="w-2 h-2 rounded-full bg-white/20 animate-pulse" style="animation-delay: 0.2s"></span>
+          <span class="w-2 h-2 rounded-full bg-white/10 animate-pulse" style="animation-delay: 0.4s"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

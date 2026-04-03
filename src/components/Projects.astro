@@ -1,0 +1,55 @@
+---
+export interface Props {
+  githubUrl: string;
+}
+
+const { githubUrl } = Astro.props;
+---
+
+<section id="projects" class="py-10">
+  <div class="flex items-center justify-between mb-8">
+    <h2 class="section-title text-white">
+      Projects
+    </h2>
+    <a
+      href="/projects"
+      class="nav-link text-sm"
+    >
+      View All
+    </a>
+  </div>
+
+  <a
+    href={githubUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="card block group"
+  >
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <h3 class="font-mono font-bold text-lg text-white group-hover:text-white/80 transition-colors duration-300 underline decoration-white/30 underline-offset-4">
+          GitHub Repositories
+        </h3>
+        <p class="text-sm text-text-secondary mt-2 leading-relaxed">
+          Explore my open-source projects, contributions, and code experiments. From infrastructure automation to cloud-native tools.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="tag">open-source</span>
+          <span class="tag">cloud</span>
+          <span class="tag">infrastructure</span>
+          <span class="tag">automation</span>
+        </div>
+      </div>
+      <div class="shrink-0 text-text-secondary group-hover:text-white transition-colors duration-300">
+        <span class="flex items-center gap-1 font-mono text-sm">
+          GitHub
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </a>
+</section>

@@ -1,0 +1,56 @@
+---
+export interface ExperienceItem {
+  title: string;
+  company: string;
+  period: string;
+  location: string;
+  description: string;
+  tags?: string[];
+}
+
+export interface Props {
+  items: ExperienceItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section id="experience" class="py-10">
+  <div class="flex items-center justify-between mb-8">
+    <h2 class="section-title text-white">
+      Experience
+    </h2>
+  </div>
+
+  <div class="relative pl-8 space-y-8 animate-stagger">
+    {items.map((item, index) => (
+      <div class="relative group">
+        <div class="timeline-dot group-hover:scale-125 transition-transform duration-300"></div>
+        {index < items.length - 1 && <div class="timeline-line"></div>}
+        
+        <div class="card group-hover:translate-x-1 transition-transform duration-300">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
+            <div>
+              <h3 class="font-mono font-bold text-lg text-white group-hover:text-white/80 transition-colors duration-300">
+                {item.title}
+              </h3>
+              <p class="font-mono text-sm text-text-secondary">{item.company}</p>
+            </div>
+            <div class="sm:text-right shrink-0">
+              <p class="font-mono text-xs text-text-secondary">{item.period}</p>
+              <p class="font-mono text-xs text-text-secondary/60">{item.location}</p>
+            </div>
+          </div>
+          <p class="text-sm text-text-secondary leading-relaxed">{item.description}</p>
+          {item.tags && item.tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mt-4">
+              {item.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
