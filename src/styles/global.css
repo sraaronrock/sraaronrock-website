@@ -52,6 +52,11 @@ body.light-mode {
   color: white;
 }
 
+.light-mode ::selection {
+  background: rgba(0, 0, 0, 0.15);
+  color: black;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -69,6 +74,18 @@ body.light-mode {
   background: rgba(255, 255, 255, 0.4);
 }
 
+.light-mode ::-webkit-scrollbar-track {
+  background: var(--color-background-light);
+}
+
+.light-mode ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
 /* === Components === */
 .section-title {
   font-family: var(--font-mono);
@@ -76,12 +93,17 @@ body.light-mode {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  color: white;
 }
 
 @media (min-width: 768px) {
   .section-title {
     font-size: 1.875rem;
   }
+}
+
+.light-mode .section-title {
+  color: #1a1a1a;
 }
 
 .card {
@@ -106,10 +128,12 @@ body.light-mode {
 .light-mode .card {
   background-color: var(--color-surface-light);
   border-color: var(--color-border-light);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .light-mode .card:hover {
-  border-color: #999;
+  border-color: #bbb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .tag {
@@ -127,6 +151,17 @@ body.light-mode {
 .tag:hover {
   background: rgba(255, 255, 255, 0.1);
   color: white;
+}
+
+.light-mode .tag {
+  background: rgba(0, 0, 0, 0.05);
+  color: #444;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.light-mode .tag:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #1a1a1a;
 }
 
 .nav-link {
@@ -163,11 +198,118 @@ body.light-mode {
 }
 
 .light-mode .nav-link:hover {
-  color: black;
+  color: #1a1a1a;
 }
 
 .light-mode .nav-link::after {
-  background: black;
+  background: #1a1a1a;
+}
+
+/* === Light mode overrides for utility classes used in components === */
+
+/* text-white -> dark text in light mode */
+.light-mode .text-white {
+  color: #1a1a1a !important;
+}
+
+.light-mode .text-white\/80 {
+  color: rgba(26, 26, 26, 0.8) !important;
+}
+
+.light-mode .text-white\/70 {
+  color: rgba(26, 26, 26, 0.7) !important;
+}
+
+.light-mode .text-white\/40 {
+  color: rgba(26, 26, 26, 0.4) !important;
+}
+
+.light-mode .text-white\/20 {
+  color: rgba(26, 26, 26, 0.2) !important;
+}
+
+.light-mode .hover\:text-white:hover {
+  color: #1a1a1a !important;
+}
+
+.light-mode .hover\:text-white\/80:hover {
+  color: rgba(26, 26, 26, 0.8) !important;
+}
+
+.light-mode .text-text-secondary {
+  color: var(--color-text-light-secondary) !important;
+}
+
+.light-mode .text-text-secondary\/60 {
+  color: rgba(102, 102, 102, 0.6) !important;
+}
+
+/* Background overrides */
+.light-mode .bg-black\/80 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.light-mode .bg-white\/10,
+.light-mode .bg-white\/20,
+.light-mode .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.light-mode .hover\:bg-white\/20:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Border overrides */
+.light-mode .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.light-mode .border-white\/30 {
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.light-mode .border-white\/40 {
+  border-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+.light-mode .border-white\/50 {
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.light-mode .hover\:border-white\/40:hover {
+  border-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+.light-mode .hover\:border-white\/30:hover {
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Decoration overrides */
+.light-mode .decoration-white\/30 {
+  text-decoration-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Gradient bar in progress/languages */
+.light-mode .from-white\/40 {
+  --tw-gradient-from: rgba(0, 0, 0, 0.2);
+}
+
+.light-mode .to-white\/80 {
+  --tw-gradient-to: rgba(0, 0, 0, 0.5);
+}
+
+/* Backdrop for header */
+.light-mode .backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+/* SVG icons */
+.light-mode svg {
+  transition: color 0.2s;
 }
 
 /* === Animations === */
@@ -204,4 +346,23 @@ body.light-mode {
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Light mode timeline */
+.light-mode .timeline-line {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.05));
+}
+
+.light-mode .timeline-dot {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Certification accent bar */
+.light-mode .bg-white\/20 {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.light-mode .group:hover .group-hover\:bg-white\/50 {
+  background-color: rgba(0, 0, 0, 0.35) !important;
 }
