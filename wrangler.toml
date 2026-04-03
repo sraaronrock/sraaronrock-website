@@ -2,10 +2,5 @@
 name = "sraaronrock-website"
 compatibility_date = "2024-12-01"
 
-[site]
-bucket = "./dist"
-
-[env.production]
-routes = [
-  { pattern = "sraaronrock.ovh", custom_domain = true }
-]
+[assets]
+directory = "./dist"
