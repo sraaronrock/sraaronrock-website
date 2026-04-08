@@ -4,3 +4,17 @@ compatibility_date = "2024-12-01"
 
 [assets]
 directory = "./dist"
+
+[assets.html_config]
+charset = "utf-8"
+result = "overwrite"
+
+[[headers]]
+for = "/*"
+value = {Content_Security_Policy = "default-src 'self'; script-src 'self' 'sha256-D5w7c5ZFrGsUb9zdsrQIuCUditSkE2LIhpZQSTMD+mQ='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com https://github.com https://*.githubusercontent.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; object-src 'none'"}
+value = {Strict_Transport_Security = "max-age=31536000; includeSubDomains; preload"}
+value = {X_Content_Type_Options = "nosniff"}
+value = {X_Frame_Options = "DENY"}
+value = {X_XSS_Protection = "1; mode=block"}
+value = {Referrer_Policy = "strict-origin-when-cross-origin"}
+value = {Permissions_Policy = "camera=(), microphone=(), geolocation=(), payment=()"}
